@@ -5,12 +5,18 @@ import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
+        //declare arrays
         System.out.println(".....Generate and print new ARRAY of SalesRepresentative.....");
-        SalesRepresentative[] reps = new SalesRepresentative[10];
+        SalesRepresentative[] reps = new SalesRepresentative[100];
         //generate representatives
         SalesRepresentative.randomRepresentative(reps);
-        //print representatives
+        //clone representatives to test different algorithms with the same ARRAY
+        SalesRepresentative[] reps1 = reps.clone();
+        SalesRepresentative[] reps2 = reps.clone();
+        //print representatives, reps 1 and reps 2 are identical
         SalesRepresentative.printRepresentative(reps);
+        System.out.println(" ");
+
         //sort representative
         System.out.println(".........................Bubble Sort.............................");
         SortAlgorithms algo1=new SortAlgorithms();
@@ -18,12 +24,6 @@ public class Main {
         //print sorted representative
         SalesRepresentative.printRepresentative(sortedReps);
 
-        System.out.println(".....Generate and print new ARRAY of SalesRepresentative.....");
-        SalesRepresentative[] reps1 = new SalesRepresentative[12];
-        //generate representatives
-        SalesRepresentative.randomRepresentative(reps1);
-        //print representatives
-        SalesRepresentative.printRepresentative(reps1);
         //sort representative
         System.out.println("...........................Insertion Sort.......................");
         SortAlgorithms algo2=new SortAlgorithms();
@@ -31,12 +31,6 @@ public class Main {
         //print sorted representative
         SalesRepresentative.printRepresentative(sortedReps1);
 
-        System.out.println(".....Generate and print new ARRAY of SalesRepresentative.....");
-        SalesRepresentative[] reps2 = new SalesRepresentative[9];
-        //generate representatives
-        SalesRepresentative.randomRepresentative(reps2);
-        //print representatives
-        SalesRepresentative.printRepresentative(reps2);
         //sort representative
         System.out.println(".............................Merge Sort.........................");
         SortAlgorithms algo3=new SortAlgorithms();
@@ -55,5 +49,6 @@ public class Main {
         Collections.sort(reps3,SalesRepresentative.repSalesComparator);
         //print sorted representative
         SalesRepresentative.printRepresentative(reps3);
+
     }
 }

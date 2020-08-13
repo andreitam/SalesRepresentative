@@ -1,5 +1,7 @@
 package ro.siit;
 
+import java.util.ArrayList;
+
 /**
  * Class SortAlgorithms contains methods
  * sortBubbleSort(SalesRepresentative[] reps),

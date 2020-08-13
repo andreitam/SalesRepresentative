@@ -62,6 +62,15 @@ public class SalesRepresentative {
         return this.sales=this.salesNr*this.quota;
     }
     /**
+     * Method toString() overidden
+     * @return String message about SalesRepresentative object
+     */
+    @Override
+    public String toString() {
+        return name+" has made a number of: "+salesNr+" sales, of value: "+
+                quota+", so in total: "+salesNr*quota+".";
+    }
+    /**
      * Method for filling an array with SalesRepresentative objects
      *
      * @param reps the array of SalesRepresentative objects
@@ -108,13 +117,12 @@ public class SalesRepresentative {
     }
     /**
      * Method for printing an array with SalesRepresentative objects
-     *
+     * using toString() method
      * @param reps the array of SalesRepresentative objects
      */
     public static void printRepresentative(SalesRepresentative[] reps) {
         for(SalesRepresentative temp: reps) {
-            System.out.println(temp.getName()+" has made a number of: "+temp.getSalesNr()+" sales, of value: "+
-                    temp.getQuota()+", so in total: "+temp.getSales()+".");
+            System.out.println(temp.toString());
         }
     }
     /**
