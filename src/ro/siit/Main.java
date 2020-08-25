@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         //declare arrays
         System.out.println(".....Generate and print new ARRAY of SalesRepresentative.....");
-        SalesRepresentative[] reps = new SalesRepresentative[100];
+        SalesRepresentative[] reps = new SalesRepresentative[10];
         //generate representatives
         SalesRepresentative.randomRepresentative(reps);
         //clone representatives to test different algorithms with the same ARRAY
@@ -17,27 +17,22 @@ public class Main {
         SalesRepresentative.printRepresentative(reps);
         System.out.println(" ");
 
-        //sort representative
-        System.out.println(".........................Bubble Sort.............................");
-        SortAlgorithms algo1=new SortAlgorithms();
-        SalesRepresentative[] sortedReps= algo1.sortBubbleSort(reps);
-        //print sorted representative
-        SalesRepresentative.printRepresentative(sortedReps);
+        //declare sortReps object
+        SortRepresentatives sortReps;
+        //sorting with bubble sort algorithm
+        SortAlgorithm bubbleSort = new BubbleSort();
+        sortReps = new SortRepresentatives(bubbleSort);
+        SalesRepresentative.printRepresentative(sortReps.sort(reps));
+        //sorting with insertion sort algorithm
+        SortAlgorithm insertionSort = new InsertionSort();
+        sortReps = new SortRepresentatives(insertionSort);
+        SalesRepresentative.printRepresentative(sortReps.sort(reps1));
+        //sorting with merge sort algorithm
+        SortAlgorithm mergeSort = new MergeSort();
+        sortReps = new SortRepresentatives(mergeSort);
+        SalesRepresentative.printRepresentative(sortReps.sort(reps2));
 
-        //sort representative
-        System.out.println("...........................Insertion Sort.......................");
-        SortAlgorithms algo2=new SortAlgorithms();
-        SalesRepresentative[] sortedReps1= algo2.sortInsertionSort(reps1);
-        //print sorted representative
-        SalesRepresentative.printRepresentative(sortedReps1);
-
-        //sort representative
-        System.out.println(".............................Merge Sort.........................");
-        SortAlgorithms algo3=new SortAlgorithms();
-        SalesRepresentative[] sortedReps3= algo3.sortMergeSort(reps2, 0, reps2.length-1);
-        //print sorted representative
-        SalesRepresentative.printRepresentative(reps2);
-
+        //sorting with Comparator implemented in the SalesRepresentatives class
         System.out.println(".....Generate and print new ARRAYLIST of SalesRepresentative.....");
         ArrayList<SalesRepresentative> reps3 = new ArrayList<>();
         //generate representatives
